@@ -1,27 +1,45 @@
-# Stitches Example
+# ArtiGenius
 
-This example shows how to use the [Stitches CSS-in-JS Library](https://github.com/modulz/stitches).
+This is a simple Next.js project using [Stitches UI](https://stitches.dev/) that allows you to generate images using the [Hugging Face API](https://huggingface.co/). With this app, you can create images with text prompts, turning your ideas into visual art.
 
-## Deploy your own
+## Prerequisites
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-stitches)
+Before you begin, you'll need the following:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-stitches&project-name=with-stitches&repository-name=with-stitches)
+-   Node.js installed on your machine.
+-   A Hugging Face API key. You can obtain one by signing up [here](https://huggingface.co/) if you don't have an account already.
 
-## How to use
+## Getting Started
 
-Execute [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+-   Clone this repository to your local machine:
 
-```bash
-npx create-next-app --example with-stitches with-stitches-app
-```
+    ```bash
+    git clone https://github.com/SDC-USAR/ArtiGenius-AI.git
+    ```
 
-```bash
-yarn create next-app --example with-stitches with-stitches-app
-```
+-   Change into the project directory:
+    ```bash
+    cd ArtiGenius-AI
+    ```
+-   Install project dependencies:
+    ```bash
+    pnpm install
+    ```
+-   Create a `.env.local` file in the project root and add your Hugging Face API key as `NEXT_PUBLIC_HUGGINGFACE_API_KEY`. You can get your API key from your Hugging Face account settings.
 
-```bash
-pnpm create next-app --example with-stitches with-stitches-app
-```
+    ```bash
+    NEXT_PUBLIC_HUGGINGFACE_API_KEY=your-api-key
+    ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+-   Start the development server:
+    ```bash
+    pnpm run dev
+    ```
+
+## Feedback and Issues
+
+If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/SDC-USAR/ArtiGenius-AI/issues/new). We welcome your feedback!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/SDC-USAR/ArtiGenius-AI/blob/main/LICENSE) file for details.
