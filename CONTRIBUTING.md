@@ -6,15 +6,15 @@ In the sections below, you'll find some easy way to connect with other developer
 
 Looking forward to building ARTGENIUS-AI with you!
 
-## GITHUB
+## Github
  
 The main project fork lives here in Github:
 
 * [https://github.com/SDC-USAR/ArtiGenius-AI](https://github.com/SDC-USAR/ArtiGenius-AI)
 
-## SETUP GUIDE
+## Setup Guide
 
--   After forking the website from the above link clone this repository to your local machine:
+-   After forking the website from the above link clone this repository to your local machine, Please use your username in place of {your_username}
 
     ```bash
     git clone https://github.com/{your_username}/ArtiGenius-AI.git
@@ -66,8 +66,26 @@ You can view the list of [good first issues](https://github.com/SDC-USAR/ArtiGen
     git commit -m "your message"
     git push --set-upstream origin {your_username}
     ```
-- The upstream command is required for the first time then you can simply use
+- The upstream command is required for the first time, after that you may simply use:
     ```bash
     git push
     ```
 
+## Making Pull Requests
+
+If you have developed a cool new feature or improvement, then send us a pull request.
+Please try and make sure that this is linked to an [issue](https://github.com/SDC-USAR/ArtiGenius-AI/issues).
+
+**Please keep all pull requests on a separate branch with your username as told above!**
+
+-  To make a pull request please be in the repository that you got after forking the the original one and click on the Pull requests tab (present next to <>Code)
+
+-  Then click New pull request and select the branch that you made earlier
+
+-  Then click on Create pull request , give an appropriate title and in comments please mention the issue that you worked on.
+
+-  Then click on Create pull request
+
+## License
+
+-  This project is licensed under the MIT License - see the LICENSE file for details.
