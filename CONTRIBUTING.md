@@ -38,4 +38,36 @@ The main project fork lives here in Github:
     ```bash
     pnpm run dev
     ```
-    
+
+## Issues
+
+If you spot a bug, then please feel free to raise an issue in our main GitHub project:
+* [https://github.com/SDC-USAR/ArtiGenius-AI/issues](https://github.com/SDC-USAR/ArtiGenius-AI/issues)
+
+## Resolving Issues
+
+If you're new to the project and looking for a place to start, we recommend checking out the issues tagged with "good first issues". These issues are specifically curated for newcomers to the project, providing an opportunity to get familiar with the codebase and make meaningful contributions.
+
+You can view the list of [good first issues](https://github.com/SDC-USAR/ArtiGenius-AI/labels/good%20first%20issue) issues.
+
+## Points to remember while making contributions
+
+-  Before working on any issues please make another branch with your username , to make one use the command
+    ```bash
+    git branch {your_username}
+    ```
+-  Then switch to that branch using the command 
+    ```bash
+    git checkout {your_username}
+    ```
+-  Then follow the following commands to push your contributions on the github (please run one command at a time):
+    ```bash
+    git add .
+    git commit -m "your message"
+    git push --set-upstream origin {your_username}
+    ```
+- The upstream command is required for the first time then you can simply use
+    ```bash
+    git push
+    ```
+
