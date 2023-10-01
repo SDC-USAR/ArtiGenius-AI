@@ -81,6 +81,31 @@ export default function Home() {
         return response
     }
 
+    const downloadImage = () => {
+        if (!output) return;
+        const a = document.createElement("a");
+        a.href = output;
+        a.download = output;
+        a.click();
+    };
+
+    const Button = styled("button", {
+        all: "unset",
+        boxSizing: "border-box",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 4,
+        padding: "0 15px",
+        fontSize: 15,
+        lineHeight: 1,
+        fontWeight: 500,
+        height: 35,
+        width: "100%",
+        backgroundColor: "$purple500",
+        color: "white",
+    });
+
     return (
         <Box css={{ paddingY: '$6' }}>
             <Head>
@@ -96,7 +121,14 @@ export default function Home() {
                     isGenerating={isGenerating}
                 />
                 <Output>
-                    {output && <img src={output} alt="Generated Image" />}
+                    {
+                        output && (<>
+                            <img src={output} alt="Generated Image" />
+                            <Button css={{ marginTop: 10 }} onClick={downloadImage}>
+                                Download Image
+                            </Button>
+                        </>)
+                    }
                 </Output>
             </Container>
         </Box>
