@@ -1,10 +1,10 @@
 # Contributing
 
-We want everyone to feel that they can contribute to the ARTGENIUS-AI project of SDC-USAR.  Whether you have an idea to share, a feature to add, an issue to report, or a pull-request of the finest code ever,which ever it may be, we want you to participate!
+We want everyone to feel that they can contribute to the ARTIGENIUS-AI project of SDC-USAR.  Whether you have an idea to share, a feature to add, an issue to report, or a pull-request of the finest code ever,which ever it may be, we want you to participate!
 
 In the sections below, you'll find some easy way to connect with other developers as well as some useful informational links on our license and community policies.
 
-Looking forward to building ARTGENIUS-AI with you!
+Looking forward to building ARTIGENIUS-AI with you!
 
 ## Github
  
@@ -54,17 +54,17 @@ You can view the list of [good first issues](https://github.com/SDC-USAR/ArtiGen
 
 -  Before working on any issues please make another branch with your username , to make one use the command
     ```bash
-    git branch {your_username}
+    git branch {your_username}/your_branch
     ```
 -  Then switch to that branch using the command 
     ```bash
-    git checkout {your_username}
+    git checkout {your_username}/your_branch
     ```
 -  Then follow the following commands to push your contributions on the github (please run one command at a time):
     ```bash
     git add .
     git commit -m "your message"
-    git push --set-upstream origin {your_username}
+    git push --set-upstream origin {your_username}/your_branch
     ```
 - The upstream command is required for the first time, after that you may simply use:
     ```bash
