@@ -82,7 +82,7 @@ const inputStyles = {
     borderRadius: 4,
 
     fontSize: 15,
-    color: "$foreground",
+    color: "black",
     backgroundColor: "$gray300",
     boxShadow: `0 0 0 1px $gray400`,
     "&:hover": { boxShadow: `0 0 0 1px $gray600` },
