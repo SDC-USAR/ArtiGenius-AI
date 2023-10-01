@@ -3,6 +3,7 @@ import { styled } from '../stitches.config'
 import { PromptForm } from '../components/prompt-form'
 import { useState } from 'react'
 import { Output } from '../components/output'
+import DownloadForm from '../components/download-form'
 
 const Box = styled('div', {})
 
@@ -33,6 +34,7 @@ const Container = styled('div', {
 export default function Home() {
     const [isGenerating, setIsGenerating] = useState(false)
     const [output, setOutput] = useState<string | null>(null)
+    const [prompt, setPrompt] = useState('' as string | null)
 
     const handleStartGeneration = async (prompt: string) => {
         if (typeof prompt != 'string') {
@@ -42,6 +44,7 @@ export default function Home() {
 
         setOutput(null)
         setIsGenerating(true)
+        setPrompt(prompt)
 
         try {
             const response = await generateImage(prompt)
@@ -98,6 +101,7 @@ export default function Home() {
                 <Output>
                     {output && <img src={output} alt="Generated Image" />}
                 </Output>
+                {output && <DownloadForm imgSource={output} prompt={prompt} />}
             </Container>
         </Box>
     )

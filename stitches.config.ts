@@ -28,6 +28,14 @@ export const {
       purple400: 'hsl(252,75%,84%)',
       purple500: 'hsl(252,78%,60%)',
       purple600: 'hsl(252,80%,53%)',
+
+      yellow100: 'hsl(46,80%,53%)',
+      yellow200: 'hsl(46,80%,50%)',
+      yellow300: 'hsl(46,80%,48%)',
+      yellow400: 'hsl(46,80%,45%)',
+      yellow500: 'hsl(46,80%,43%)',
+      yellow600: 'hsl(46,80%,40%)',
+
     },
     space: {
       1: '5px',
