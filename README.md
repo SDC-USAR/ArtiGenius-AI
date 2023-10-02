@@ -8,6 +8,10 @@ Before you begin, you'll need the following:
 
 -   Node.js installed on your machine.
 -   A Hugging Face API key. You can obtain one by signing up [here](https://huggingface.co/) if you don't have an account already.
+    - Once you sign up, you can get your API key from your account settings.
+    - Click your profile icon in the top right corner of the page and select "Settings" from the dropdown menu.
+    - Click the "Access Token" tab on the left side of the page.
+    - Generate a new token.
 
 ## Getting Started
 
