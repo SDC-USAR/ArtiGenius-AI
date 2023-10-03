@@ -3,6 +3,7 @@ import { styled } from '../stitches.config'
 import { PromptForm } from '../components/prompt-form'
 import { useState } from 'react'
 import { Output } from '../components/output'
+import { darkTheme } from "../stitches.config";
 
 const Box = styled('div', {})
 
@@ -87,9 +88,13 @@ export default function Home() {
                 <title>Image Generation AI</title>
             </Head>
             <Container size={{ '@initial': '1', '@bp1': '2' }}>
-                <Text as="h1">
-                    Create realistic images and art from a description in
-                    natural language
+                <Text
+                    as="h1"
+                    css={{
+                        color: darkTheme ? '$white' : '$loContrast',
+                    }}
+                >
+                    Create realistic images and art from a description in natural language
                 </Text>
                 <PromptForm
                     onSubmit={handleStartGeneration}
