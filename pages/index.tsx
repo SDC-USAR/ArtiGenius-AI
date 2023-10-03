@@ -85,7 +85,7 @@ export default function Home() {
     return (
         <Box css={{ paddingY: '$6' }}>
             <Head>
-                <title>Image Generation AI</title>
+                <title>ArtiGenius-AI</title>
             </Head>
             <Container size={{ '@initial': '1', '@bp1': '2' }}>
                 <Text
