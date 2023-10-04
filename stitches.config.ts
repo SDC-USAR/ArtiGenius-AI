@@ -14,7 +14,7 @@ export const {
     colors: {
       hiContrast: 'hsl(206,10%,5%)',
       loContrast: 'white',
-      background:"white",
+      background: 'white',
       gray100: 'hsl(206,22%,99%)',
       gray200: 'hsl(206,12%,97%)',
       gray300: 'hsl(206,11%,92%)',
