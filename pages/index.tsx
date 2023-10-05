@@ -82,6 +82,39 @@ export default function Home() {
         return response
     }
 
+    const downloadImageJpg = () => {
+        if (!output) return;
+        const a = document.createElement("a");
+        a.href = output;
+        a.download = `${output}.jpg`;
+        a.click();
+    };
+
+    const downloadImagePng = () => {
+        if (!output) return;
+        const a = document.createElement("a");
+        a.href = output;
+        a.download = `${output}.png`;
+        a.click();
+    };
+
+    const Button = styled("button", {
+        all: "unset",
+        boxSizing: "border-box",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 4,
+        padding: "0 15px",
+        fontSize: 15,
+        lineHeight: 1,
+        fontWeight: 500,
+        height: 35,
+        width: "100%",
+        backgroundColor: "$purple500",
+        color: "white",
+    });
+
     return (
         <Box css={{ paddingY: '$6' }}>
             <Head>
@@ -101,7 +134,17 @@ export default function Home() {
                     isGenerating={isGenerating}
                 />
                 <Output>
-                    {output && <img src={output} alt="Generated Image" />}
+                    {
+                        output && (<>
+                            <img src={output} alt="Generated Image" />
+                            <Button css={{ marginTop: 10 }} onClick={downloadImageJpg}>
+                                Download Image in JPG
+                            </Button>
+                            <Button css={{ marginTop: 10 }} onClick={downloadImagePng}>
+                                Download Image in PNG
+                            </Button>
+                        </>)
+                    }
                 </Output>
             </Container>
         </Box>

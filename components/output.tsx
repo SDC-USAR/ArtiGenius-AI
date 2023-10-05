@@ -27,7 +27,7 @@ export const Output: React.FC<Props> = ({ children }) => {
 };
 
 export const Pre = styled("pre", {
-    display: "flex",
+    // display: "flex",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
