@@ -15,7 +15,7 @@ function ThemeToggle() {
   };
 
   const sliderStyle = {
-    width: '75px', 
+    width: '70px', 
     height: '25px',
     borderRadius: '12.5px',
     backgroundColor: resolvedTheme === 'dark' ? '#333' : '#ddd',

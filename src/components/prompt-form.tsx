@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import * as Form from '@radix-ui/react-form';
 import { styled } from '@stitches/react';
@@ -15,6 +15,50 @@ type ThemeVariants = 'dark' | 'light';
 export const PromptForm: React.FC<Props> = ({ onSubmit, isGenerating }) => {
   const { theme, resolvedTheme } = useTheme();
   const currentTheme: ThemeVariants = (theme || resolvedTheme || 'light') as ThemeVariants;
+
+  const [randomPrompt, setRandomPrompt] = useState<string | null>(null);
+  const promptInputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleSurpriseMeClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    //An array of random prompts
+    const randomPrompts = [
+      'A beautiful sunset over the ocean',
+      'A cozy cabin in the woods',
+      'A futuristic cityscape',
+      'A beautiful sunset over the ocean',
+      'A cozy cabin in the woods',
+      'A futuristic cityscape',
+      'An enchanted forest with talking animals',
+      'A bustling market in a foreign land',
+      'A magical kingdom hidden in the clouds',
+      'A secret underground laboratory',
+      'A time-traveling adventure to the past',
+      'Exploring an alien planet with strange creatures',
+      'A pirate ship sailing the high seas',
+      'A haunted house on a dark and stormy night',
+      'An epic battle between dragons and knights',
+      'A journey through a mysterious portal',
+      'A hidden treasure map leading to riches',
+      'A deserted island with a message in a bottle',
+      'A parallel universe with alternate versions of yourself',
+      'A quest to save the world from an evil sorcerer',
+      'A trip to the moon in a rocket ship',
+      'A magical spell that goes awry',
+      'A visit to a futuristic city of robots',
+      
+    ];
+
+    
+    const randomIndex = Math.floor(Math.random() * randomPrompts.length);
+    const randomPrompt = randomPrompts[randomIndex];
+
+    
+    if (promptInputRef.current) {
+      promptInputRef.current.value = randomPrompt;
+    }
+  };
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
@@ -35,6 +79,7 @@ export const PromptForm: React.FC<Props> = ({ onSubmit, isGenerating }) => {
           <StyledInput
             type="text"
             name="prompt"
+            ref={promptInputRef}
             required
             placeholder="Enter a prompt like 'a painting of a cat'"
             autoComplete="off"
@@ -42,11 +87,20 @@ export const PromptForm: React.FC<Props> = ({ onSubmit, isGenerating }) => {
           />
         </Form.Control>
       </StyledFormField>
-      <Form.Submit asChild>
-        <StyledButton css={{ marginTop: 10, borderRadius: 15}} disabled={isGenerating}>
-          {isGenerating ? 'Generating..' : 'Start Generating'}
+      <StyledFlex css={{ alignItems: 'center' }}>
+        <Form.Submit asChild>
+          <StyledButton css={{ marginRight: 5, flex: 1, borderRadius: 15 }} disabled={isGenerating}>
+            {isGenerating ? 'Generating..' : 'Start Generating'}
+          </StyledButton>
+        </Form.Submit>
+        <StyledButton
+          css={{ marginLeft: 5, flex: 1, borderRadius: 15 }}
+          onClick={handleSurpriseMeClick}
+          type="button" // Added type="button" to prevent generation on its own
+        >
+          Surprise Me
         </StyledButton>
-      </Form.Submit>
+      </StyledFlex>
     </StyledFormRoot>
   );
 };
