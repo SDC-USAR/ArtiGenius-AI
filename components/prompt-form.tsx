@@ -43,7 +43,7 @@ export const PromptForm: React.FC<Props> = ({ onSubmit, isGenerating }) => {
         </Form.Control>
       </StyledFormField>
       <Form.Submit asChild>
-        <StyledButton css={{ marginTop: 10 }} disabled={isGenerating}>
+        <StyledButton css={{ marginTop: 10, borderRadius: 15}} disabled={isGenerating}>
           {isGenerating ? 'Generating..' : 'Start Generating'}
         </StyledButton>
       </Form.Submit>
@@ -99,6 +99,7 @@ const StyledInput = styled('input', {
   height: 35,
   lineHeight: 1,
   padding: '0 10px',
+  borderRadius: 15, 
   variants: {
     theme: {
       dark: {
