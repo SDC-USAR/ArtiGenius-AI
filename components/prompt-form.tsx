@@ -3,6 +3,8 @@ import { useTheme } from 'next-themes';
 import * as Form from '@radix-ui/react-form';
 import { styled } from '@stitches/react';
 
+const fontFamily = "'Poppins', sans-serif";
+
 type Props = {
   onSubmit: (prompt: string) => void;
   isGenerating: boolean;
@@ -61,12 +63,14 @@ const StyledFormLabel = styled(Form.Label, {
   fontWeight: 500,
   lineHeight: '35px',
   color: '$foreground',
+  fontFamily: fontFamily, 
 });
 
 const StyledFormMessage = styled(Form.Message, {
   fontSize: 13,
   color: '$red600',
   opacity: 0.8,
+  fontFamily: fontFamily, 
 });
 
 const StyledFlex = styled('div', { display: 'flex' });
@@ -87,6 +91,7 @@ const inputStyles = {
   '&:hover': { boxShadow: '0 0 0 1px $gray600' },
   '&:focus': { boxShadow: '0 0 0 2px $purple600' },
   '&::selection': { backgroundColor: '$gray600', color: 'white' },
+  fontFamily: fontFamily, 
 };
 
 const StyledInput = styled('input', {
@@ -133,4 +138,5 @@ const StyledButton = styled('button', {
   boxShadow: '0 2px 10px $gray400',
   '&:not(:disabled):hover': { backgroundColor: '$purple600' },
   '&:not(:disabled):focus': { boxShadow: '0 0 0 2px black' },
+  fontFamily: fontFamily, 
 });
