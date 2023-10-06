@@ -5,12 +5,20 @@ import { useState } from 'react';
 import { Output } from '../components/output';
 import { darkTheme } from '../stitches.config';
 import Logo from '../components/logo';
+import ThemeToggle from '../components/button';
 
 const Box = styled('div', {});
 
 const Text = styled('p', {
   fontFamily: '$system',
   color: '$hiContrast',
+});
+
+const LogoWrapper = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center', 
+  marginTop: 'auto',
 });
 
 const Container = styled('div', {
@@ -35,17 +43,18 @@ const Container = styled('div', {
 const PageContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center', 
-  justifyContent: 'center', 
-  minHeight: '100vh', 
+  alignItems: 'center',
+  justifyContent: 'center',
+  minHeight: '100vh',
+  position: 'relative',
 });
 
-const LogoText = styled('h1', {
+const LogoText = styled('h2', {
   fontFamily: 'Poppins, sans-serif',
-  fontSize: '56px', // Adjust the font size as needed
-  fontWeight: 'bold',   
+  fontSize: '50px',
+  fontWeight: 'bold',
   color: darkTheme ? '$white' : '$loContrast',
-  margin: '0', 
+  margin: '0',
 });
 
 export default function Home() {
@@ -53,7 +62,7 @@ export default function Home() {
   const [output, setOutput] = useState<string | null>(null);
 
   const handleStartGeneration = async (prompt: string) => {
-    if (typeof prompt != 'string') {
+    if (typeof prompt !== 'string') {
       alert('Invalid prompt');
       return;
     }
@@ -101,21 +110,24 @@ export default function Home() {
 
   return (
     <PageContainer>
-      <LogoText>ArtiGenius-AI</LogoText> {}
-      <Logo /> {}
-      
+      <ThemeToggle />
+      <LogoWrapper>
+        <Logo />
+        <LogoText>ArtiGenius-AI</LogoText>
+      </LogoWrapper>
       <Box css={{ paddingY: '$6' }}>
         <Head>
           <title>ArtiGenius-AI</title>
         </Head>
         <Container size={{ '@initial': '1', '@bp1': '2' }}>
           <Text
-            as="h1"
+            as="h6"
             css={{
               color: darkTheme ? '$white' : '$loContrast',
+              fontSize: '20px',
             }}
           >
-            Create realistic images and art from a description in natural language
+            Generate lifelike images from your text prompts with precision and realism.
           </Text>
           <PromptForm onSubmit={handleStartGeneration} isGenerating={isGenerating} />
           <Output>{output && <img src={output} alt="Generated Image" />}</Output>

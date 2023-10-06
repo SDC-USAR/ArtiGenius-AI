@@ -15,7 +15,7 @@ function ThemeToggle() {
   };
 
   const sliderStyle = {
-    width: '70px', 
+    width: '70px',
     height: '25px',
     borderRadius: '12.5px',
     backgroundColor: resolvedTheme === 'dark' ? '#333' : '#ddd',
@@ -25,21 +25,21 @@ function ThemeToggle() {
   };
 
   const knobStyle = {
-    width: '25px', 
+    width: '25px',
     height: '25px',
     borderRadius: '50%',
     backgroundColor: resolvedTheme === 'dark' ? '#ddd' : '#333',
     position: 'absolute' as 'absolute',
-    top: '50%', 
-    transform: 'translateY(-50%)', 
-    left: resolvedTheme === 'dark' ? '0' : '45px', 
+    top: '50%',
+    transform: 'translateY(-50%)',
+    left: resolvedTheme === 'dark' ? '0' : '45px',
     transition: 'left 0.3s, background-color 0.3s',
   };
 
   const textStyle = {
     position: 'absolute' as 'absolute',
-    top: '50%', 
-    transform: 'translateY(-50%)', 
+    top: '50%',
+    transform: 'translateY(-50%)',
     width: '100%',
     textAlign: 'center',
     fontSize: '14px',
@@ -50,11 +50,10 @@ function ThemeToggle() {
   return (
     <div
       style={{
-        display: 'flex',  
-        flexDirection: 'row-reverse',
-        marginLeft: 'auto',
-        marginTop: '2rem',
-        marginRight: '2rem',
+        position: 'fixed',
+        top: '2rem',
+        right: '2rem',
+        zIndex: 9999, // Ensure it's above other content
       }}
     >
       <div
